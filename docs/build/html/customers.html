@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Customers &mdash; Remittance Public API Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Countries" href="countries.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Remittance Public API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="password_policy.html">Password Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="countries.html">Countries</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Customers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#register">Register</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#login">Login</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#forgot-password">Forgot Password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reset-password">Reset Password</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Remittance Public API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Customers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/customers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <style> .red {color:red} .green{color:green}</style><div class="section" id="customers">
+<h1>Customers<a class="headerlink" href="#customers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="register">
+<h2>Register<a class="headerlink" href="#register" title="Permalink to this headline">¶</a></h2>
+<p>The API returns <span class="green">201</span> status code on successful registration.</p>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/client/v1/register</span></code></p>
+<p>Method: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p>
+<p><strong>Additional Headers</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>X-Client-IP</td>
+<td>IP Address of the customer.</td>
+</tr>
+<tr class="row-odd"><td>X-Client-UA</td>
+<td><div class="first last line-block">
+<div class="line">User Agent of client application. For mobile apps this should be</div>
+<div class="line">Application Version</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>X-Client-Fingerprint</td>
+<td>The unique identifier for device (Device ID).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Parameters</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>email</td>
+<td>Email address of the customer.</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>Password</td>
+</tr>
+<tr class="row-even"><td>confirm_password</td>
+<td>Password Confirmation</td>
+</tr>
+<tr class="row-odd"><td>email_verification_url</td>
+<td><div class="first last line-block">
+<div class="line">Enter the endpoint for creating a email verification url, you should</div>
+<div class="line">provide <cite>:token</cite> variable in this url. This is going to be replaced</div>
+<div class="line">by email verification token generated by backend. The customer will</div>
+<div class="line">be redirect to this page for verification.</div>
+<div class="line">eg. <cite>https://www.example.com/users/verify-email/:token</cite> will be</div>
+<div class="line"><cite>https://www.example.com/users/verify-email/bacdefghi</cite></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example HTTP Request</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST /client/v1/register HTTP/1.1</span>
+<span class="go">X-Client-ID: your-client-id</span>
+<span class="go">X-Client-Secret: your-client-secret</span>
+<span class="go">X-Client-IP: user-ip-address</span>
+<span class="go">X-Client-UA: user-agent</span>
+<span class="go">X-Client-Fingerprint: unique-device-fingerprint</span>
+<span class="go">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="go">email=test%40test.com</span>
+<span class="go">&amp;password=Password%40741</span>
+<span class="go">&amp;confirm_password=Password%40741</span>
+<span class="go">&amp;email_verification_url=https%3A%2F%2Fwww.example.com%2Fusers%2Fverify-email%2F%3Atoken</span>
+</pre></div>
+</div>
+<p><strong>Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">201</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;63pS1fe84r940yHocou6I7......&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Description</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>The login token for customer.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Failed Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;invalid_request_error&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Invalid request&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;unique&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Email address is already registered.&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="login">
+<h2>Login<a class="headerlink" href="#login" title="Permalink to this headline">¶</a></h2>
+<p>The API returns <span class="green">200</span> status code on successful login and <span class="red">401</span> for login failure due to incorrect credentials.</p>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/client/v1/login</span></code></p>
+<p>Method: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p>
+<p><strong>Additional Headers</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>X-Client-IP</td>
+<td>IP Address of the customer.</td>
+</tr>
+<tr class="row-odd"><td>X-Client-UA</td>
+<td><div class="first last line-block">
+<div class="line">User Agent of client application. For mobile apps this should be</div>
+<div class="line">Application Version</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>X-Client-Fingerprint</td>
+<td>The unique identifier for device (Device ID).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Parameters</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>email</td>
+<td>Email address of the customer.</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>Password</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example HTTP Request</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST /client/v1/login HTTP/1.1</span>
+<span class="go">X-Client-ID: your-client-id</span>
+<span class="go">X-Client-Secret: your-client-secret</span>
+<span class="go">X-Client-IP: user-ip-address</span>
+<span class="go">X-Client-UA: user-agent</span>
+<span class="go">X-Client-Fingerprint: unique-device-fingerprint</span>
+<span class="go">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="go">email=test%40test.com</span>
+<span class="go">&amp;password=Password%40741</span>
+</pre></div>
+</div>
+<p><strong>Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;token&quot;</span><span class="p">:</span> <span class="s2">&quot;63pS1fe84r940yHocou6I7......&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Description</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>The login token for customer.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Failed Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">401</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;authentication_error&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Incorrect email address or password&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="forgot-password">
+<h2>Forgot Password<a class="headerlink" href="#forgot-password" title="Permalink to this headline">¶</a></h2>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/client/v1/forgot-password</span></code></p>
+<p>Method: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p>
+<p><strong>Parameters</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>email</td>
+<td>Email address of the customer.</td>
+</tr>
+<tr class="row-odd"><td>reset_password_url</td>
+<td><div class="first last line-block">
+<div class="line">Enter the endpoint for creating a reset password url, you should</div>
+<div class="line">provide <cite>:token</cite> variable in this url. This is going to be replaced</div>
+<div class="line">by reset password token generated by backend. The customer will</div>
+<div class="line">be redirect to this page for resetting password.</div>
+<div class="line">eg. <cite>https://www.example.com/reset-password/:token</cite> will be</div>
+<div class="line"><cite>https://www.example.com/reset-password/bacdefghi</cite></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example HTTP Request</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST /client/v1/forgot-password HTTP/1.1</span>
+<span class="go">X-Client-ID: your-client-id</span>
+<span class="go">X-Client-Secret: your-client-secret</span>
+<span class="go">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="go">email=test%40test.com</span>
+<span class="go">&amp;reset_password_url=https%3A%2F%2Fwww.example.com%2Freset-password%2F%3Atoken</span>
+</pre></div>
+</div>
+<p><strong>Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;recipient&quot;</span><span class="p">:</span> <span class="s2">&quot;te***@test.com&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Response Description</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>recipient</td>
+<td>The masked email address of customer account.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Failed Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;invalid_request_error&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Invalid request&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;email&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;not_found&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Customer account not found.&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="reset-password">
+<h2>Reset Password<a class="headerlink" href="#reset-password" title="Permalink to this headline">¶</a></h2>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/client/v1/reset-password</span></code></p>
+<p>Method: <code class="docutils literal notranslate"><span class="pre">POST</span></code></p>
+<p><strong>Parameters</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>Request token</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>Password</td>
+</tr>
+<tr class="row-even"><td>confirm_password</td>
+<td>Password Confirmation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example HTTP Request</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">POST /client/v1/reset-password HTTP/1.1</span>
+<span class="go">X-Client-ID: your-client-id</span>
+<span class="go">X-Client-Secret: your-client-secret</span>
+<span class="go">Content-Type: application/x-www-form-urlencoded</span>
+
+<span class="go">token=bacdefghi</span>
+<span class="go">&amp;password=Password%40741</span>
+<span class="go">&amp;confirm_password=Password%40741</span>
+</pre></div>
+</div>
+<p><strong>Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Example Failed Responses</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;invalid_request_error&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Invalid request&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;confirm_password&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;_invalidConfirmPassword&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;New password and confirm password are not same.&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span>
+    <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;invalid_request_error&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Invalid request&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;errors&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;param&quot;</span><span class="p">:</span> <span class="s2">&quot;confirm_password&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="s2">&quot;_invalidConfirmPassword&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;New password and confirm password are not same.&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="countries.html" class="btn btn-neutral" title="Countries" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Dhruv Patel.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

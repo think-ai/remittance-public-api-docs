@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Countries &mdash; Remittance Public API Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Customers" href="customers.html" />
+    <link rel="prev" title="Password Policy" href="password_policy.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Remittance Public API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="password_policy.html">Password Policy</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Countries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-all-countries">Get All Countries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-source-countries">Get Source Countries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="customers.html">Customers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Remittance Public API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Countries</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/countries.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="countries">
+<h1>Countries<a class="headerlink" href="#countries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-all-countries">
+<h2>Get All Countries<a class="headerlink" href="#get-all-countries" title="Permalink to this headline">¶</a></h2>
+<p>Get list of all countries in the system.</p>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/client/v1/countries</span></code></p>
+<p>Method: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p>
+<p><strong>Example HTTP Request</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /client/v1/countries HTTP/1.1</span>
+<span class="go">X-Client-ID: your-client-id</span>
+<span class="go">X-Client-Secret: your-client-secret</span>
+</pre></div>
+</div>
+<p><strong>Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;countries&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;known_name&quot;</span><span class="p">:</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;official_name&quot;</span><span class="p">:</span> <span class="s2">&quot;United Kingdom of Great Britain and Northern Ireland&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;endonym&quot;</span><span class="p">:</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;demonym&quot;</span><span class="p">:</span> <span class="s2">&quot;British&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isd_code&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha2&quot;</span><span class="p">:</span> <span class="s2">&quot;GB&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha3&quot;</span><span class="p">:</span> <span class="s2">&quot;GBR&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;fips_code&quot;</span><span class="p">:</span> <span class="s2">&quot;UK&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;slug&quot;</span><span class="p">:</span> <span class="s2">&quot;united-kingdom&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;known_name&quot;</span><span class="p">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;official_name&quot;</span><span class="p">:</span> <span class="s2">&quot;United States of America&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;endonym&quot;</span><span class="p">:</span> <span class="s2">&quot;United States&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;demonym&quot;</span><span class="p">:</span> <span class="s2">&quot;American&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isd_code&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha2&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha3&quot;</span><span class="p">:</span> <span class="s2">&quot;USA&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;fips_code&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;slug&quot;</span><span class="p">:</span> <span class="s2">&quot;united-states&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-source-countries">
+<h2>Get Source Countries<a class="headerlink" href="#get-source-countries" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Customers can register or send money from these countries only.</p>
+</div>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/client/v1/sources</span></code></p>
+<p>Method: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p>
+<p><strong>Example HTTP Request</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /client/v1/countries/sources HTTP/1.1</span>
+<span class="go">X-Client-ID: your-client-id</span>
+<span class="go">X-Client-Secret: your-client-secret</span>
+</pre></div>
+</div>
+<p><strong>Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;countries&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;known_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;official_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Austria&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;endonym&quot;</span><span class="p">:</span> <span class="s2">&quot;Österreich&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;demonym&quot;</span><span class="p">:</span> <span class="s2">&quot;Austrian&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isd_code&quot;</span><span class="p">:</span> <span class="mi">43</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha2&quot;</span><span class="p">:</span> <span class="s2">&quot;AT&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha3&quot;</span><span class="p">:</span> <span class="s2">&quot;AUT&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;fips_code&quot;</span><span class="p">:</span> <span class="s2">&quot;AU&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;slug&quot;</span><span class="p">:</span> <span class="s2">&quot;austria&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;known_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Belgium&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;official_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Belgium&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;endonym&quot;</span><span class="p">:</span> <span class="s2">&quot;België&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;demonym&quot;</span><span class="p">:</span> <span class="s2">&quot;Belgian&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isd_code&quot;</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha2&quot;</span><span class="p">:</span> <span class="s2">&quot;BE&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha3&quot;</span><span class="p">:</span> <span class="s2">&quot;BEL&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;fips_code&quot;</span><span class="p">:</span> <span class="s2">&quot;BE&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;slug&quot;</span><span class="p">:</span> <span class="s2">&quot;belgium&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;known_name&quot;</span><span class="p">:</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;official_name&quot;</span><span class="p">:</span> <span class="s2">&quot;United Kingdom of Great Britain and Northern Ireland&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;endonym&quot;</span><span class="p">:</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;demonym&quot;</span><span class="p">:</span> <span class="s2">&quot;British&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;isd_code&quot;</span><span class="p">:</span> <span class="mi">44</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha2&quot;</span><span class="p">:</span> <span class="s2">&quot;GB&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;iso_code_alpha3&quot;</span><span class="p">:</span> <span class="s2">&quot;GBR&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;fips_code&quot;</span><span class="p">:</span> <span class="s2">&quot;UK&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;slug&quot;</span><span class="p">:</span> <span class="s2">&quot;united-kingdom&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="customers.html" class="btn btn-neutral float-right" title="Customers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="password_policy.html" class="btn btn-neutral" title="Password Policy" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Dhruv Patel.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

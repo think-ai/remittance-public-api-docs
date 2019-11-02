@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Errors &mdash; Remittance Public API Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Settings" href="settings.html" />
+    <link rel="prev" title="Authentication" href="authentication.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Remittance Public API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Errors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#http-status-code-summary">HTTP status code summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-types">Error Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#handling-errors">Handling Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-codes">Error Codes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="settings.html">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="password_policy.html">Password Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="countries.html">Countries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customers.html">Customers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Remittance Public API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Errors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/errors.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <style> .red {color:red} .green{color:green}</style><div class="section" id="errors">
+<h1>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h1>
+<p>API uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the <span class="green">2xx</span> range indicate success. Codes in the <span class="red">4xx</span> range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a transaction failed, etc.). Codes in the <span class="red">5xx</span> range indicate an error with backend servers (these are rare).</p>
+<p>Some <span class="red">4xx</span> errors that could be handled programmatically (e.g., an invalid account number) include an error code that briefly explains the error reported.</p>
+<div class="section" id="http-status-code-summary">
+<h2>HTTP status code summary<a class="headerlink" href="#http-status-code-summary" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP Status Code</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>Everything worked as expected.</td>
+</tr>
+<tr class="row-odd"><td>201</td>
+<td>A new resource was created.</td>
+</tr>
+<tr class="row-even"><td>400</td>
+<td>The request was unacceptable, often due to missing a required parameter.</td>
+</tr>
+<tr class="row-odd"><td>401</td>
+<td>No valid authentication headers were present.</td>
+</tr>
+<tr class="row-even"><td>402</td>
+<td>The parameters were valid but the request failed.</td>
+</tr>
+<tr class="row-odd"><td>403</td>
+<td>You are not allowed to access this resource.</td>
+</tr>
+<tr class="row-even"><td>404</td>
+<td>The requested resource doesn’t exist.</td>
+</tr>
+<tr class="row-odd"><td>405</td>
+<td>The request method is not allowed for invoked endpoint.</td>
+</tr>
+<tr class="row-even"><td>500</td>
+<td>Something went wrong on server end. (These are rare.)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="error-types">
+<h2>Error Types<a class="headerlink" href="#error-types" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>api_error</td>
+<td><div class="first last line-block">
+<div class="line">API errors cover any other type of problem (e.g., a</div>
+<div class="line">temporary problem with backend or 3rd Party’s servers), and</div>
+<div class="line">are extremely uncommon.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>authentication_error</td>
+<td>Failure to properly authenticate yourself in the request.</td>
+</tr>
+<tr class="row-even"><td>two_factor_authentication_error</td>
+<td>User is not two factor authenticated.</td>
+</tr>
+<tr class="row-odd"><td>authorization_error</td>
+<td>Trying to access restricted resource.</td>
+</tr>
+<tr class="row-even"><td>invalid_request_error</td>
+<td>This arise when your request has invalid parameters.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="handling-errors">
+<h2>Handling Errors<a class="headerlink" href="#handling-errors" title="Permalink to this headline">¶</a></h2>
+<p>Our API raise exceptions for many reasons, such as a failed transfer, invalid parameters, authentication errors, and network unavailability. We recommend writing code that gracefully handles all possible API exceptions.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="78%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Attribute</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>code</td>
+<td><div class="first last line-block">
+<div class="line">For some errors that could be handled programmatically.</div>
+<div class="line">A short string indicating the error code reported. See Error Codes section.</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>message</td>
+<td>A human-readable message providing more details about the error.</td>
+</tr>
+<tr class="row-even"><td>param</td>
+<td><div class="first last line-block">
+<div class="line">If the error is parameter-specific, the parameter related to the error.</div>
+<div class="line">For example, you can use this to display a message near the correct form field.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="error-codes">
+<h2>Error Codes<a class="headerlink" href="#error-codes" title="Permalink to this headline">¶</a></h2>
+<p>Some <span class="red">4xx</span> errors that could be handled programmatically (e.g., request contains invalid parameter) include an error code—a short string with a brief explanation—as a value for code. Below is a list of possible error codes that can be returned.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Code</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>_required</td>
+<td>One or more required parameters are missing.</td>
+</tr>
+<tr class="row-odd"><td>_empty</td>
+<td>One or more required fields contain empty value.</td>
+</tr>
+<tr class="row-even"><td>_invalid</td>
+<td>One or more required values are invalid.</td>
+</tr>
+<tr class="row-odd"><td>unique</td>
+<td>The parameter has failed unique constraint check.</td>
+</tr>
+<tr class="row-even"><td>_missingHeader</td>
+<td>One or more required headers are missing or empty.</td>
+</tr>
+<tr class="row-odd"><td>not_found</td>
+<td>Resource could not be found.</td>
+</tr>
+<tr class="row-even"><td>_sameAsCurrentPassword</td>
+<td>New password is same as current password.</td>
+</tr>
+<tr class="row-odd"><td>_invalidConfirmPassword</td>
+<td>Password and confirm password do not match.</td>
+</tr>
+<tr class="row-even"><td>not_found</td>
+<td>Resource could not be found.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="settings.html" class="btn btn-neutral float-right" title="Settings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="authentication.html" class="btn btn-neutral" title="Authentication" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Dhruv Patel.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

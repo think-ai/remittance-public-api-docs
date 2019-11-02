@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Settings &mdash; Remittance Public API Documentation  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Password Policy" href="password_policy.html" />
+    <link rel="prev" title="Errors" href="errors.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Remittance Public API Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authentication.html">Authentication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="errors.html">Errors</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="password_policy.html">Password Policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="countries.html">Countries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="customers.html">Customers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Remittance Public API Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Settings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/settings.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="settings">
+<h1>Settings<a class="headerlink" href="#settings" title="Permalink to this headline">¶</a></h1>
+<p>Endpoint: <code class="docutils literal notranslate"><span class="pre">/client/v1/settings</span></code></p>
+<p>Method: <code class="docutils literal notranslate"><span class="pre">GET</span></code></p>
+<p><strong>Example HTTP Request</strong></p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">GET /client/v1/settings HTTP/1.1</span>
+<span class="go">X-Client-ID: your-client-id</span>
+<span class="go">X-Client-Secret: your-client-secret</span>
+</pre></div>
+</div>
+<p><strong>Response</strong></p>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;code&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+    <span class="nt">&quot;message&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;settings&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;trading_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ABC Money Transfer&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;company_name&quot;</span><span class="p">:</span> <span class="s2">&quot;ABC Limited&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;tag_line&quot;</span><span class="p">:</span> <span class="s2">&quot;Sending Money with Care&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;ABC Money Transfer is the trading name of ABC Limited. Registered company No. 07952651. We are registered as a Money Service Business and supervised by HM Revenue &amp; Customs (HMRC) under Money Laundering Regulations (MLR) No.XXXXXXX.We are Authorised and Regulated by the Financial Conduct Authority (FCA) as a payment institution with reference number XXXXXX&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;cs_number&quot;</span><span class="p">:</span> <span class="s2">&quot;+44 10 1234 5678&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;cs_email&quot;</span><span class="p">:</span> <span class="s2">&quot;support@abcmoneytransfer.com&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hq_address&quot;</span><span class="p">:</span> <span class="s2">&quot;Headquarter Street&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hq_city&quot;</span><span class="p">:</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hq_region&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hq_postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;Post Code&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;hq_country&quot;</span><span class="p">:</span> <span class="s2">&quot;United Kingdom&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;locales&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;en_GB&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;English (UK)&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="nt">&quot;timezones&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Africa/Abidjan&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="s2">&quot;+00:00&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;nice&quot;</span><span class="p">:</span> <span class="s2">&quot;Abidjan&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Africa/Accra&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="s2">&quot;+00:00&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;nice&quot;</span><span class="p">:</span> <span class="s2">&quot;Accra&quot;</span>
+            <span class="p">},</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;Africa/Addis_Ababa&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;offset&quot;</span><span class="p">:</span> <span class="s2">&quot;+03:00&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;nice&quot;</span><span class="p">:</span> <span class="s2">&quot;Addis Ababa&quot;</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="password_policy.html" class="btn btn-neutral float-right" title="Password Policy" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="errors.html" class="btn btn-neutral" title="Errors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Dhruv Patel.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
