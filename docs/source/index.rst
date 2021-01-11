@@ -14,3 +14,4 @@
    password_policy
    countries
    customers
+   profile
