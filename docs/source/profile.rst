@@ -51,7 +51,7 @@ Method: ``POST``
 +--------------------------+-------------------------------------------------------------------------+
 | is_pep                   | Is User politically exposed person(Y/N).                                |
 +--------------------------+-------------------------------------------------------------------------+
-| is_fm_pep                | Anyone of users family is politically exposed(Y/N).                        |
+| is_fm_pep                | Anyone of users family is politically exposed(Y/N).                     |
 +--------------------------+-------------------------------------------------------------------------+
 | is_linked_pep            | Anyone politically exposed person linked with user(Y/N).                |
 +--------------------------+-------------------------------------------------------------------------+
